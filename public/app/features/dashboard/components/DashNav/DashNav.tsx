@@ -8,7 +8,7 @@ import { PlaylistSrv } from 'app/features/playlist/playlist_srv';
 // Components
 import { DashNavButton } from './DashNavButton';
 import { DashNavTimeControls } from './DashNavTimeControls';
-import { Icon, ModalsController } from '@grafana/ui';
+import { /*Icon,*/ ModalsController } from '@grafana/ui';
 import { textUtil } from '@grafana/data';
 import { BackButton } from 'app/core/components/BackButton/BackButton';
 // State
@@ -178,9 +178,14 @@ class DashNav extends PureComponent<Props> {
     const folderSymbol = css`
       margin-right: 0 4px;
     `;
-    const mainIconClassName = css`
+    // const mainIconClassName = css`
+    //   margin-right: 8px;
+    //   margin-bottom: 3px;
+    // `;
+
+    const dashboardIconClassName = css`
       margin-right: 8px;
-      margin-bottom: 3px;
+      height: 18px;
     `;
 
     const folderTitle = dashboard.meta.folderTitle;
@@ -190,7 +195,15 @@ class DashNav extends PureComponent<Props> {
       <>
         <div>
           <div className="navbar-page-btn">
-            {!isFullscreen && <Icon name="apps" size="lg" className={mainIconClassName} />}
+            {/* {!isFullscreen && <Icon name="apps" size="lg" className={mainIconClassName} />} */}
+            {!isFullscreen && (
+              <div className={dashboardIconClassName}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 11c0 4.971-4.029 9-9 9s-9-4.029-9-9 4.029-9 9-9v9h9z" fill="#5F5F5F"></path>
+                  <path d="M20 9h-9V0c4.971 0 9 4.029 9 9" fill="#0077C8"></path>
+                </svg>
+              </div>
+            )}
             {haveFolder && (
               <>
                 <a className="navbar-page-btn__folder" onClick={this.onFolderNameClick}>
@@ -201,7 +214,7 @@ class DashNav extends PureComponent<Props> {
             <a onClick={this.onDashboardNameClick}>{dashboard.title}</a>
           </div>
         </div>
-        <div className="navbar-buttons navbar-buttons--actions">{this.renderLeftActionsButton()}</div>
+        {/* <div className="navbar-buttons navbar-buttons--actions">{this.renderLeftActionsButton()}</div> */}
         <div className="navbar__spacer" />
       </>
     );
