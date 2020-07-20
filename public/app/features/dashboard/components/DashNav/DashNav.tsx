@@ -175,9 +175,9 @@ class DashNav extends PureComponent<Props> {
   renderDashboardTitleSearchButton() {
     const { dashboard, isFullscreen } = this.props;
 
-    const folderSymbol = css`
-      margin-right: 0 4px;
-    `;
+    // const folderSymbol = css`
+    //   margin-right: 0 4px;
+    // `;
     // const mainIconClassName = css`
     //   margin-right: 8px;
     //   margin-bottom: 3px;
@@ -188,7 +188,7 @@ class DashNav extends PureComponent<Props> {
       height: 18px;
     `;
 
-    const folderTitle = dashboard.meta.folderTitle;
+    // const folderTitle = dashboard.meta.folderTitle;
     const haveFolder = dashboard.meta.folderId > 0;
 
     return (
@@ -206,12 +206,14 @@ class DashNav extends PureComponent<Props> {
             )}
             {haveFolder && (
               <>
-                <a className="navbar-page-btn__folder" onClick={this.onFolderNameClick}>
+                {/* <a className="navbar-page-btn__folder" onClick={this.onFolderNameClick}> */}
+                {/* <span className="navbar-page-btn__folder">
                   {folderTitle} <span className={folderSymbol}>/</span>
-                </a>
+                </span> */}
               </>
             )}
-            <a onClick={this.onDashboardNameClick}>{dashboard.title}</a>
+            {/* <a onClick={this.onDashboardNameClick}>{dashboard.title}</a> */}
+            <span>{dashboard.title}</span>
           </div>
         </div>
         {/* <div className="navbar-buttons navbar-buttons--actions">{this.renderLeftActionsButton()}</div> */}
