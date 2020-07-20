@@ -163,7 +163,7 @@ export class PanelHeader extends Component<Props, State> {
           />
           <div
             className="panel-title-container"
-            onClick={this.onMenuToggle}
+            // onClick={this.onMenuToggle}
             onMouseDown={this.onMouseDown}
             aria-label={selectors.components.Panels.Panel.title(title)}
           >
@@ -179,7 +179,7 @@ export class PanelHeader extends Component<Props, State> {
               )}
               <span className="panel-title-text">
                 {title}
-                <Icon name="angle-down" className="panel-menu-toggle" />
+                {/* <Icon name="angle-down" className="panel-menu-toggle" /> */}
               </span>
               {this.state.panelMenuOpen && (
                 <ClickOutsideWrapper onClick={this.closeMenu}>

@@ -42,7 +42,7 @@ $panel-header-no-title-zindex: 1;
   overflow: hidden;
   white-space: nowrap;
   max-width: calc(100% - 38px);
-  cursor: pointer;
+  // cursor: pointer;
   font-weight: $font-weight-semi-bold;
 
   &:hover {
