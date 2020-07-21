@@ -329,9 +329,9 @@ class DashNav extends PureComponent<Props> {
 
         <div className="navbar-buttons navbar-buttons--actions">{this.renderRightActionsButton()}</div>
 
-        <div className="navbar-buttons navbar-buttons--tv">
+        {/* <div className="navbar-buttons navbar-buttons--tv">
           <DashNavButton tooltip="Cycle view mode" classSuffix="tv" icon="monitor" onClick={this.onToggleTVMode} />
-        </div>
+        </div> */}
 
         {!dashboard.timepicker.hidden && (
           <div className="navbar-buttons">
